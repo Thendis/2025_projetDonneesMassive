@@ -1,0 +1,27 @@
+
+zookeeper_start:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/zookeeper-server-start.sh /home1/em963948/Téléchargements/kafka_2.13-3.0.0/config/zookeeper.properties 
+
+broker1_start:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-server-start.sh /home1/em963948/Téléchargements/kafka_2.13-3.0.0/config/server.properties
+	
+broker2_start:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-server-start.sh /home1/em963948/Téléchargements/kafka_2.13-3.0.0/config/server_bis.properties
+
+topic1_create:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-topics.sh --create --topic topic1 --partitions 2  --bootstrap-server localhost:9092 --replication-factor 2
+topic2_create:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-topics.sh --create --topic topic2 --partitions 2  --bootstrap-server localhost:9093 --replication-factor 2
+
+topic1_delete:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-topics.sh --delete --topic topic1 --bootstrap-server localhost:9092
+topic2_delete:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-topics.sh --delete --topic topic2 --bootstrap-server localhost:9093
+	
+producer_start:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-console-producer.sh --topic topic1 --bootstrap-server localhost:9092
+
+consummer_start:
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-console-consumer.sh --from-beginning --topic topic1 --bootstrap-server localhost:9092
+	
+	/home1/em963948/Téléchargements/kafka_2.13-3.0.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092 
