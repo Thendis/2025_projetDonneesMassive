@@ -70,7 +70,7 @@ public class ConsumerThreeSameGroup {
        while (running.get()) {
             long startTime = System.nanoTime();
 
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100000));
+            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
 
             if (records.isEmpty()) {
                 // Si aucun message n'est reçu, vérifier si nous devons arrêter
