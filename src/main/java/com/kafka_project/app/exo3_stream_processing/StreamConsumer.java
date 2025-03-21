@@ -21,7 +21,7 @@ import org.apache.kafka.streams.kstream.Produced;
 import org.apache.kafka.streams.kstream.TimeWindows;
 import org.apache.kafka.streams.kstream.Windowed;
 
-public class Stream_consumer {
+public class StreamConsumer {
 
     public static void main(String[] args) {
         Properties props = new Properties();
@@ -55,7 +55,7 @@ public class Stream_consumer {
                         (windowedKey, value) -> new KeyValue<>(
                                 windowedKey.key() + "@" + windowedKey.window().startTime() + "-" + windowedKey.window().endTime(),
                                 value.getKey()+":FROM "+windowedKey.window().startTime() + " TO " + windowedKey.window().endTime()+":"+value.getAvg()))
-                .to("sumTopic", Produced.with(Serdes.String(), Serdes.String()));
+                .to("avgTopic", Produced.with(Serdes.String(), Serdes.String()));
 
         KafkaStreams streams = new KafkaStreams(builder.build(), props);
         streams.start();
@@ -155,57 +155,3 @@ public class Stream_consumer {
         }
     }
 }
-
-/* Ca fonctionnait
-windowSumOfNumber.toStream()
-            .mapValues(agg -> agg.getCount() > 0 ? agg.getSomme() / agg.getCount() : 0.0)
-            .to("sumTopic");
-
- // Sérialisation de la clé Windowed
-        windowSumOfNumber.toStream()
-                .map((windowedKey, value) -> new KeyValue<>(
-                windowedKey.key() + "@" + windowedKey.window().startTime() + "-" + windowedKey.window().endTime(),
-                value.toString()))
-                .to("sumTopic", Produced.with(Serdes.String(), Serdes.String()));
- */
-
- /*
- KTable<Windowed<String>, Double> averages = parsedStream
-                .groupBy((key, value) -> 
-                value.getId(), 
-                Grouped.with(
-                    Serdes.String(), 
-                    new ValueSerde()
-                    )
-                );
-                /*.windowedBy(TimeWindows.of(Duration.ofMinutes(5)))
-                .aggregate(
-                        () -> new ValueWithCount(0.0, 0),
-                        (key, value, aggregate) -> {
-                            aggregate.setValue(aggregate.getValue() + value.getValue());
-                            aggregate.setCount(aggregate.getCount() + 1);
-                            return aggregate;
-                        },
-                        Materialized.<String, ValueWithCount, WindowStore<Bytes, byte[]>>as("aggregated-store")
-                                .withValueSerde(new ValueWithCountSerde())
-                )
-                .suppress(Suppressed.untilWindowCloses(Suppressed.BufferConfig.unbounded()))
-                .mapValues(value -> value.getValue() / value.getCount());
-
-
-KTable<Windowed<String>, Long> windowSumOfNumber = src
-                .groupByKey()
-                .windowedBy(TimeWindows.of(Duration.ofMinutes(5)))
-                .count();
-
-src.to("sumTopic");
-
-        // Parser les données pour extraire l'id, le timestamp, et la valeur
-        KStream<String, ValueWithTimestamp> parsedStream = src.mapValues((k, value) -> {
-            String[] parts = value.split(";");
-            String id = k + ";" + parts[0];
-            double valeur = Double.parseDouble(parts[2]);
-            System.out.println("id " + id + ", valeur " + valeur);
-            return new ValueWithTimestamp(id, valeur);
-        });
- */

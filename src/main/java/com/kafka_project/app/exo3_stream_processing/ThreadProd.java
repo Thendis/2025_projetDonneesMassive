@@ -2,7 +2,7 @@ package com.kafka_project.app.exo3_stream_processing;
 
 import java.util.HashMap;
 
-public class Thread_prod {
+public class ThreadProd {
 
     public static void main(String[] args) {
         final int nb_bat = 2;

@@ -13,7 +13,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 public class Batiment implements Runnable, Serializable {
 
     private String nomBat;
-    private int nb_salle = 5;
+    private int nbSalle = 5;
     Random rd = new Random();
     Producer<String, String> producer;
 
@@ -36,7 +36,7 @@ public class Batiment implements Runnable, Serializable {
             LocalDateTime tsp = LocalDateTime.now();
             final String sep = ";";
             //Récupération des températures par salle
-            for (int salle_id = 0;salle_id<nb_salle;salle_id++){
+            for (int salle_id = 0;salle_id<nbSalle;salle_id++){
                 String to_send = "salle"+salle_id+sep+LocalDateTime.now()+sep+rd.nextDouble(0, 35);
                 System.out.println("From "+nomBat+" -> "+to_send);
                 producer.send(new ProducerRecord<>("temperatures", nomBat, to_send));
@@ -44,7 +44,7 @@ public class Batiment implements Runnable, Serializable {
 
             //Attente avant prochaine collecte
             try {
-                Thread.sleep(1000);
+                Thread.sleep(10000);
             } catch (InterruptedException ex) {
             }
         }
