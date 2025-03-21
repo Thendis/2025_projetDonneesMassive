@@ -1,6 +1,7 @@
-# CHEMIN VERS DOSSIER QUI CONTIENT KAFKA SETUP
-kafka_dir = /home1/em963948/Téléchargements/kafka_2.13-3.0.0
+# CHEMIN VERS DOSSIER QUI CONTIENT LES FICHIERS KAFKA
+kafka_dir = ./kafka_2.13-3.0.0
 
+###### exo 2
 start_prod:mvn_package
 	mvn exec:java -Dexec.mainClass="com.kafka_project.app.Prod"
 
@@ -19,17 +20,23 @@ start_consumerTwoDifferentGroup:mvn_package
 start_consumerThreeDifferentGroup:mvn_package
 	mvn exec:java -Dexec.mainClass="com.kafka_project.app.ConsumerThreeDifferentGroup"
 
+
+
+##### stream processing
 start_emk_prod:mvn_package
 	mvn exec:java -Dexec.mainClass="com.kafka_project.app.exo3_stream_processing.ThreadProd"
 
 start_emk_consum:mvn_package
 	mvn exec:java -Dexec.mainClass="com.kafka_project.app.exo3_stream_processing.StreamConsumer"
 
+
+##### mvn
+
 mvn_package:
 	mvn package
 
 
-#####
+##### Serveur Kafka
 
 
 zookeeper_start:
@@ -64,7 +71,7 @@ consummer_avgTopic_start:
 	$(kafka_dir)/bin/kafka-console-consumer.sh --from-beginning --topic avgTopic --bootstrap-server localhost:9092
 
 
-topic1_create:
+topic1_create:topic1_delete
 	$(kafka_dir)/bin/kafka-topics.sh --create --topic topic1 --partitions 2  --bootstrap-server localhost:9092 --replication-factor 2
 
 topic2_create:

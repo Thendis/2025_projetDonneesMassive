@@ -26,7 +26,7 @@
   strict_bytes_per_sync=false
   max_background_compactions=-1
   base_background_compactions=-1
-  max_background_jobs=12
+  max_background_jobs=20
   allow_data_in_errors=false
   avoid_unnecessary_blocking_io=false
   log_readahead_size=0
@@ -50,7 +50,7 @@
   persist_stats_to_disk=false
   WAL_size_limit_MB=0
   bgerror_resume_retry_interval=1000000
-  wal_dir=/home7/em963948/Desktop/2025_projetDonneesMassive/./tmp/5min_temperature_avg/1_0/KSTREAM-AGGREGATE-STATE-STORE-0000000002/KSTREAM-AGGREGATE-STATE-STORE-0000000002.1742515200000
+  wal_dir=/home7/em963948/Desktop/2025_projetDonneesMassive/./tmp/5min_temperature_avg/1_0/KSTREAM-AGGREGATE-STATE-STORE-0000000002/KSTREAM-AGGREGATE-STATE-STORE-0000000002.1742558400000
   log_file_time_to_roll=0
   keep_log_file_num=1000
   WAL_ttl_seconds=0
