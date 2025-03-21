@@ -1,2 +1,9 @@
-/home7/em963948/Desktop/2025_Kafka/kafka_project/src/main/java/com/kafka_project/app/Consumer.java
-/home7/em963948/Desktop/2025_Kafka/kafka_project/src/main/java/com/kafka_project/app/Prod.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/Consumer.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/ConsumerThreeDifferentGroup.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/ConsumerThreeSameGroup.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/ConsumerTwoDifferentGroup.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/ConsumerTwoSameGroup.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/Prod.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/exo3_stream_processing/Batiment.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/exo3_stream_processing/Stream_consumer.java
+/home7/em963948/Desktop/2025_projetDonneesMassive/src/main/java/com/kafka_project/app/exo3_stream_processing/Thread_prod.java
