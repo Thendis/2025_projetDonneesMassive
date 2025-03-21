@@ -1,0 +1,7 @@
+[2025-03-06 12:21:57,727] INFO [Broker id=1] Handling LeaderAndIsr request correlationId 7 from controller 0 for 4 partitions (state.change.logger)
+[2025-03-06 12:21:57,733] INFO [Broker id=1] Follower topic2-0 starts at leader epoch 6 from offset 0 with high watermark 0. Previous leader epoch was 5. (state.change.logger)
+[2025-03-06 12:21:57,734] INFO [Broker id=1] Follower topic1-1 starts at leader epoch 6 from offset 247 with high watermark 247. Previous leader epoch was 5. (state.change.logger)
+[2025-03-06 12:21:57,734] INFO [Broker id=1] Follower topic2-1 starts at leader epoch 6 from offset 0 with high watermark 0. Previous leader epoch was 5. (state.change.logger)
+[2025-03-06 12:21:57,734] INFO [Broker id=1] Follower topic1-0 starts at leader epoch 6 from offset 257 with high watermark 257. Previous leader epoch was 5. (state.change.logger)
+[2025-03-06 12:21:57,735] INFO [Broker id=1] Stopped fetchers as part of become-follower request from controller 0 epoch 6 with correlation id 7 for 4 partitions (state.change.logger)
+[2025-03-06 12:21:57,741] INFO [Broker id=1] Finished LeaderAndIsr request in 14ms correlationId 7 from controller 0 for 4 partitions (state.change.logger)

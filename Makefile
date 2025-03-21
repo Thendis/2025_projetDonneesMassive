@@ -62,3 +62,18 @@ consummer_temperatures_start:
 
 consummer_avgTopic_start:
 	$(kafka_dir)/bin/kafka-console-consumer.sh --from-beginning --topic avgTopic --bootstrap-server localhost:9092
+
+
+topic1_create:
+	$(kafka_dir)/bin/kafka-topics.sh --create --topic topic1 --partitions 2  --bootstrap-server localhost:9092 --replication-factor 2
+
+topic2_create:
+	$(kafka_dir)/bin/kafka-topics.sh --create --topic topic2 --partitions 2  --bootstrap-server localhost:9093 --replication-factor 2
+
+topic1_delete:
+	$(kafka_dir)/bin/kafka-topics.sh --delete --topic topic1 --bootstrap-server localhost:9092
+topic2_delete:
+	$(kafka_dir)/bin/kafka-topics.sh --delete --topic topic2 --bootstrap-server localhost:9093
+
+consummer_start:
+	$(kafka_dir)/bin/kafka-console-consumer.sh --from-beginning --topic topic1 --bootstrap-server localhost:9092

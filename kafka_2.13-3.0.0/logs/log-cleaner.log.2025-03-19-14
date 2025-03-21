@@ -1,0 +1,17 @@
+[2025-03-19 14:06:01,938] INFO Cleaner 0: Beginning cleaning of log __consumer_offsets-48. (kafka.log.LogCleaner)
+[2025-03-19 14:06:01,940] INFO Cleaner 0: Building offset map for __consumer_offsets-48... (kafka.log.LogCleaner)
+[2025-03-19 14:06:01,952] INFO Cleaner 0: Building offset map for log __consumer_offsets-48 for 1 segments in offset range [0, 14). (kafka.log.LogCleaner)
+[2025-03-19 14:06:01,953] INFO Cleaner 0: Offset map for log __consumer_offsets-48 complete. (kafka.log.LogCleaner)
+[2025-03-19 14:06:01,953] INFO Cleaner 0: Cleaning log __consumer_offsets-48 (cleaning prior to Tue Mar 11 14:59:50 CET 2025, discarding tombstones prior to Thu Jan 01 01:00:00 CET 1970)... (kafka.log.LogCleaner)
+[2025-03-19 14:06:01,955] INFO Cleaner 0: Cleaning LogSegment(baseOffset=0, size=2150, lastModifiedTime=1741701590606, largestRecordTimestamp=Some(1741701589602)) in log __consumer_offsets-48 into 0 with deletion horizon 0, retaining deletes. (kafka.log.LogCleaner)
+[2025-03-19 14:06:01,971] INFO Cleaner 0: Swapping in cleaned segment LogSegment(baseOffset=0, size=373, lastModifiedTime=1741701590606, largestRecordTimestamp=Some(1741701589602)) for segment(s) List(LogSegment(baseOffset=0, size=2150, lastModifiedTime=1741701590606, largestRecordTimestamp=Some(1741701589602))) in log Log(dir=/home1/em963948/Documents/2025_Kafka/kafka/__consumer_offsets-48, topicId=2piXuAHlRrmiIjEFb6A9Wg, topic=__consumer_offsets, partition=48, highWatermark=19, lastStableOffset=19, logStartOffset=0, logEndOffset=19) (kafka.log.LogCleaner)
+[2025-03-19 14:06:01,975] INFO [kafka-log-cleaner-thread-0]: 
+	Log cleaner thread 0 cleaned log __consumer_offsets-48 (dirty section = [0, 14])
+	0,0 MB of log processed in 0,0 seconds (0,1 MB/sec).
+	Indexed 0,0 MB in 0,0 seconds (0,2 Mb/sec, 38,2% of total time)
+	Buffer utilization: 0,0%
+	Cleaned 0,0 MB in 0,0 seconds (0,1 Mb/sec, 61,8% of total time)
+	Start size: 0,0 MB (14 messages)
+	End size: 0,0 MB (5 messages)
+	82,7% size reduction (64,3% fewer messages)
+ (kafka.log.LogCleaner)
